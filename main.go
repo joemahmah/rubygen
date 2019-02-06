@@ -3,8 +3,9 @@ package main
 import (
 	"text/template"
 	"fmt"
-	"os"
 	"flag"
+	"bytes"
+	"github.com/atotto/clipboard"
 )
 
 //
@@ -41,5 +42,10 @@ func main() {
 		elem.Chars = append(elem.Chars, RubyChar{Symbol: args[index], Text: args[index + 1]})
 	}
 
-	rubyTemplate.Execute(os.Stdout, elem)
+	output := &bytes.Buffer{}
+
+	rubyTemplate.Execute(output, elem)
+
+	clipboard.WriteAll(output.String())
+	fmt.Print(output.String())
 }

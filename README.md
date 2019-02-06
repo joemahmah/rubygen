@@ -2,8 +2,15 @@
 A simple program to generate html ruby tags. Automatically copies output to clipboard.
 
 ## Installing
-You can install with:
-	`$ go install github.com/joemahmah/rubygen`
+You can build with:
+```
+$ go get github.com/joemahmah/rubygen
+$ cd [gopath]/github.com/joemahmah/rubygen
+$ go build
+```
+You can also download a release version.
+
+Note that you must place ```ruby.tmpl``` with the executable file.
 
 ### License and Information
 rubygen is licensed under the MIT license. 
